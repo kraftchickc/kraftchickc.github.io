@@ -9,24 +9,19 @@
   Replace bracketed placeholders: [NAME], [TAGLINE], [ABOUT], [EMAIL], [LOCATION], [LINKEDIN], [GITHUB]
   Photo placeholders are the hatched boxes (class="img-frame") — once you have real photos,
   replace each one with: <img src="images/yourphoto.jpg" alt="description">
-  and remove the .img-frame / .img-label markup around it.
+  and remove the .img-label span inside it.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="sheet">
 
-  <div class="reg-mark tl"></div>
-  <div class="reg-mark tr"></div>
-  <div class="reg-mark bl"></div>
-  <div class="reg-mark br"></div>
-
   <header class="topbar">
-    <div class="topbar-label">DWG NO. 001 — HOME</div>
+    <div class="topbar-label">FILE: portfolio.asm</div>
     <nav>
       <a href="index.html" aria-current="page">Home</a>
       <a href="projects.html">Projects</a>
@@ -34,38 +29,32 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO / VIEWPORT -->
   <section class="hero">
-
-    <div class="triptych">
-      <div class="img-frame"><span class="img-label">PHOTO — machine shop / CNC</span></div>
-      <div class="img-frame center"><span class="img-label">PHOTO — competition / team</span></div>
-      <div class="img-frame"><span class="img-label">PHOTO — project / prototype</span></div>
+    <div class="gizmo">
+      VIEW: ISO<br>
+      <span class="axis">X</span> <span class="axis">Y</span> <span class="axis">Z</span>
     </div>
 
-    <div class="hero-dim">
-      <span class="tick"></span>
-      <span class="dim-label">MECHANICAL ENGINEER</span>
-      <span class="tick"></span>
-    </div>
-
-    <div class="hero-person">
-      <div class="img-frame avatar"><span class="img-label">PHOTO — headshot</span></div>
-      <div>
-        <h1 style="margin:0 0 6px;">[NAME] — Jordan Reyes</h1>
-        <p class="hero-tag" style="margin:0;">[TAGLINE] — Mechanical engineering student focused on manufacturing, design, and analysis, in research and competition.</p>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">MECHANICAL ENGINEER</div>
+      <h1>[NAME] — Jordan Reyes</h1>
+      <p class="hero-tag">[TAGLINE] — Mechanical engineering student focused on manufacturing, design, and analysis, in research and competition.</p>
+      <div class="hero-links">
+        <a class="btn" href="projects.html">View projects →</a>
+        <a class="btn ghost" href="resume.html">See resume</a>
       </div>
     </div>
 
-    <div class="hero-links" style="margin-top:32px;">
-      <a class="btn" href="projects.html">View projects →</a>
-      <a class="btn ghost" href="resume.html">See resume</a>
-    </div>
+    <div class="readout">ZOOM <span>1.00x</span> &nbsp; UNITS <span>MM</span></div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="about">
-    <h2><span class="tag">§ 01</span> About</h2>
+  <section class="panel-section">
+    <div class="panel-head">
+      <span class="panel-index">01</span>
+      <h2>About</h2>
+    </div>
     <div class="about-grid">
       <p class="about-copy">
         [ABOUT] — Replace with 3–4 sentences: your background, what kind of engineering
@@ -83,47 +72,48 @@
     </div>
   </section>
 
-  <!-- WORK HISTORY TIMELINE -->
-  <section class="timeline-section">
-    <h2><span class="tag">§ 02</span> Work history</h2>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <span class="timeline-date">Present</span>
-        <div class="img-frame timeline-logo"><span class="img-label"></span></div>
-        <h4>[University Name]</h4>
-        <p>B.S. Mechanical Engineering</p>
-      </div>
-
-      <div class="timeline-item">
-        <span class="timeline-date">Summer 2026</span>
-        <div class="img-frame timeline-logo"><span class="img-label"></span></div>
-        <h4>[Company / Team Name]</h4>
-        <p>[Role — e.g. Manufacturing Intern]</p>
-      </div>
-
-      <div class="timeline-item">
-        <span class="timeline-date">Summer 2025</span>
-        <div class="img-frame timeline-logo"><span class="img-label"></span></div>
-        <h4>[Company / Lab Name]</h4>
-        <p>[Role — e.g. Research Assistant]</p>
-      </div>
-
-      <div class="timeline-item">
-        <span class="timeline-date">High School</span>
-        <div class="img-frame timeline-logo"><span class="img-label"></span></div>
-        <h4>[School / Team Name]</h4>
-        <p>[Role — e.g. FRC Robotics, Team #____]</p>
-      </div>
-
+  <!-- WORK HISTORY AS REVISION LOG -->
+  <section class="panel-section">
+    <div class="panel-head">
+      <span class="panel-index">02</span>
+      <h2>Revision history</h2>
     </div>
+    <table class="rev-table">
+      <thead>
+        <tr><th>REV</th><th>DATE</th><th>DESCRIPTION</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>v1.4</td>
+          <td>Present</td>
+          <td><strong>[University Name]</strong> — <span class="re-org">B.S. Mechanical Engineering</span></td>
+        </tr>
+        <tr>
+          <td>v1.3</td>
+          <td>Summer 2026</td>
+          <td><strong>[Company / Team Name]</strong> — <span class="re-org">[Role — e.g. Manufacturing Intern]</span></td>
+        </tr>
+        <tr>
+          <td>v1.2</td>
+          <td>Summer 2025</td>
+          <td><strong>[Company / Lab Name]</strong> — <span class="re-org">[Role — e.g. Research Assistant]</span></td>
+        </tr>
+        <tr>
+          <td>v1.0</td>
+          <td>High School</td>
+          <td><strong>[School / Team Name]</strong> — <span class="re-org">[Role — e.g. FRC Robotics, Team #____]</span></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- MACHINERY & LAB TOOLS -->
-  <section class="tools-section">
-    <h2><span class="tag">§ 03</span> Machinery &amp; lab tools</h2>
+  <section class="panel-section">
+    <div class="panel-head">
+      <span class="panel-index">03</span>
+      <h2>Machinery &amp; lab tools</h2>
+    </div>
     <div class="tools-grid">
-
       <div class="tool-card">
         <div class="img-frame"><span class="img-label">PHOTO</span></div>
         <h4>[e.g. HAAS UMC500]</h4>
@@ -144,54 +134,62 @@
         <h4>[e.g. Bambu X2D]</h4>
         <p>3D Printer</p>
       </div>
-
     </div>
   </section>
 
-  <!-- FEATURED PROJECTS TEASER -->
-  <section class="work">
-    <h2><span class="tag">§ 04</span> Featured projects</h2>
-
-    <article class="project">
-      <div class="project-num">DWG&nbsp;002</div>
-      <div class="project-body">
-        <h3>Cantilever Bracket Redesign</h3>
-        <p>Reduced part mass 34% via topology optimization while holding factor of safety ≥ 2.5 under rated load.</p>
-      </div>
-      <a class="project-link" href="projects.html">View project →</a>
-    </article>
-
-    <article class="project">
-      <div class="project-num">DWG&nbsp;003</div>
-      <div class="project-body">
-        <h3>Centrifugal Pump Impeller</h3>
-        <p>Designed and CFD-tested a 6-blade impeller, improving hydraulic efficiency 12% over the baseline casting.</p>
-      </div>
-      <a class="project-link" href="projects.html">View project →</a>
-    </article>
-
+  <!-- FEATURED PROJECTS — FILE BROWSER -->
+  <section class="panel-section" style="border-bottom:none;">
+    <div class="panel-head">
+      <span class="panel-index">04</span>
+      <h2>Featured projects</h2>
+    </div>
+    <table class="file-browser">
+      <thead>
+        <tr><th>ID</th><th>NAME</th><th>TAGS</th><th>STATUS</th></tr>
+      </thead>
+      <tbody>
+        <tr class="file-row" onclick="window.location='projects.html'">
+          <td class="f-id">PRJ-002</td>
+          <td class="f-name">Cantilever Bracket Redesign
+            <span class="f-desc">34% mass reduction via topology optimization, FS ≥ 2.5.</span>
+          </td>
+          <td class="f-tags">SW · FEA · DFM</td>
+          <td class="f-status"><span class="status-dot complete"></span><span class="status complete-text">COMPLETE</span></td>
+        </tr>
+        <tr class="file-row" onclick="window.location='projects.html'">
+          <td class="f-id">PRJ-003</td>
+          <td class="f-name">Centrifugal Pump Impeller
+            <span class="f-desc">6-blade impeller, +12% hydraulic efficiency via CFD iteration.</span>
+          </td>
+          <td class="f-tags">Fusion · CFD</td>
+          <td class="f-status"><span class="status-dot complete"></span><span class="status complete-text">COMPLETE</span></td>
+        </tr>
+        <tr class="file-row" onclick="window.location='projects.html'">
+          <td class="f-id">PRJ-006</td>
+          <td class="f-name">5-Axis Machining Project
+            <span class="f-desc">[Describe the part and toolpath challenge.]</span>
+          </td>
+          <td class="f-tags">CAM</td>
+          <td class="f-status"><span class="status-dot progress"></span><span class="status progress-text">IN PROGRESS</span></td>
+        </tr>
+      </tbody>
+    </table>
     <div style="padding-top:24px;">
       <a class="btn ghost" href="projects.html">See all projects →</a>
     </div>
   </section>
 
-  <!-- CONTACT / TITLE BLOCK -->
-  <footer id="contact" class="titleblock">
-    <div class="tb-row tb-head">
-      <div class="tb-cell wide">CONTACT</div>
-      <div class="tb-cell">DATE</div>
-      <div class="tb-cell">REV</div>
-      <div class="tb-cell">SHEET</div>
+  <!-- STATUS BAR / CONTACT -->
+  <footer id="contact" class="statusbar">
+    <div class="sb-left">
+      <span>UNITS: MM</span>
+      <span>READY</span>
+      <span id="sb-date"></span>
     </div>
-    <div class="tb-row">
-      <div class="tb-cell wide">
-        <a href="mailto:[EMAIL]">[EMAIL]</a> ·
-        <a href="https://linkedin.com/in/[LINKEDIN]" target="_blank" rel="noopener">LinkedIn</a> ·
-        <a href="https://github.com/[GITHUB]" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <div class="tb-cell" id="tb-date"></div>
-      <div class="tb-cell">A</div>
-      <div class="tb-cell">1 / 1</div>
+    <div>
+      <a href="mailto:[EMAIL]">[EMAIL]</a> ·
+      <a href="https://linkedin.com/in/[LINKEDIN]" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/[GITHUB]" target="_blank" rel="noopener">GitHub</a>
     </div>
   </footer>
 
